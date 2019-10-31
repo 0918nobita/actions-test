@@ -6,6 +6,6 @@ jobs:
     name: A job to greet someone
     steps:
     - name: Greet someone action step
-      uses: 0918nobita/sb-sync
+      uses: 0918nobita/sb-sync@master
       with:
         myInput: 'Kodai'
