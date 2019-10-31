@@ -1,0 +1,11 @@
+on: [push]
+
+jobs:
+  greet_job:
+    runs-on: ubuntu-latest
+    name: A job to greet someone
+    steps:
+    - name: Greet someone action step
+      uses: 0918nobita/sb-sync@v1
+      with:
+        myInput: 'Kodai'
