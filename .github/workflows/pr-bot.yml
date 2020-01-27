@@ -13,4 +13,4 @@ jobs:
         run: |
           curl --request DELETE \
           --url https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels/S-waiting-for-review \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN_2 }}'
