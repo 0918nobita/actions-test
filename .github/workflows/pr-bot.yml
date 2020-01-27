@@ -11,6 +11,4 @@ jobs:
     steps:
       - name: Remove the label
         run: |
-          curl -X DELETE \
-          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels/S-waiting-for-review \
-          --header 'Authorization: token ${{ secrets.GITHUB_TOKEN_2 }}'
+          curl -X DELETE -H "Authorization: token ${{ secrets.GITHUB_TOKEN_2 }}" https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels/S-waiting-for-review
