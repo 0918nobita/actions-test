@@ -1,0 +1,16 @@
+name: Pull Request Bot
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  remove-status-label:
+    name: Remove `S-waiting-for-review` label
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove the label
+        run: |
+          curl --request DELETE \
+          --url https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels/S-waiting-for-review \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
