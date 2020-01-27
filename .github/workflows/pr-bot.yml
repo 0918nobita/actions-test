@@ -9,6 +9,10 @@ jobs:
     name: Remove `S-waiting-for-review` label
     runs-on: ubuntu-latest
     steps:
+      - name: Debug
+        run: |
+          echo ${{ github.repository }}
+          echo ${{ github.event.issue.number }}
       - name: Remove the label
         run: |
           curl -X DELETE -H "Authorization: token ${{ secrets.GITHUB_TOKEN_2 }}" https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels/S-waiting-for-review
